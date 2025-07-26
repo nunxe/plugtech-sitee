@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlugTech - Tecnologia e Inovação</title>
+<style>
+    /* Reset básico */
+    * {
+        margin: 0; padding: 0; box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        background: #0A192F;
+        color: #CCD6F6;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    header {
+        background: #112240;
+        padding: 20px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #64FFDA;
+    }
+    header .logo {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #64FFDA;
+        letter-spacing: 2px;
+    }
+    header .logo svg {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        fill: #64FFDA;
+    }
+    nav a {
+        color: #8892B0;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #64FFDA;
+    }
+    main {
+        flex-grow: 1;
+        padding: 60px 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .hero {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        color: #64FFDA;
+        margin-bottom: 20px;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        color: #8892B0;
+    }
+    section {
+        margin-bottom: 50px;
+    }
+    section h2 {
+        color: #64FFDA;
+        margin-bottom: 20px;
+        border-left: 4px solid #64FFDA;
+        padding-left: 10px;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 20px;
+    }
+    .service {
+        background: #112240;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #64FFDA33;
+        transition: transform 0.3s ease;
+    }
+    .service:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px #64FFDA;
+    }
+    .service h3 {
+        margin-bottom: 10px;
+        color: #64FFDA;
+    }
+    .service p {
+        color: #8892B0;
+    }
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        background: #112240;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px #64FFDA33;
+    }
+    form label {
+        display: block;
+        margin-bottom: 6px;
+        color: #64FFDA;
+        font-weight: 600;
+    }
+    form input, form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 4px;
+        background: #0A192F;
+        color: #CCD6F6;
+        font-size: 1rem;
+        font-family: inherit;
+        resize: vertical;
+    }
+    form button {
+        background: #64FFDA;
+        color: #0A192F;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    form button:hover {
+        background: #52c7b8;
+    }
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #112240;
+        color: #8892B0;
+        font-size: 0.9rem;
+        border-top: 2px solid #64FFDA;
+    }
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M12 2 L52 32 L12 62 Z"/></svg>
+        PlugTech
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#contact">Contato</a>
+    </nav>
+</header>
+<main>
+    <section class="hero" id="home">
+        <h1>Inovação e Tecnologia para seu Negócio</h1>
+        <p>Transformamos ideias em soluções digitais sofisticadas.</p>
+    </section>
+    <section id="about">
+        <h2>Sobre a PlugTech</h2>
+        <p>Na PlugTech, combinamos expertise tecnológica com inovação para oferecer soluções sob medida que alavancam seu negócio no mundo digital.</p>
+    </section>
+    <section id="services">
+        <h2>Serviços</h2>
+        <div class="services-list">
+            <div class="service">
+                <h3>Desenvolvimento Web</h3>
+                <p>Sites modernos, responsivos e otimizados para performance.</p>
+            </div>
+            <div class="service">
+                <h3>Aplicativos Mobile</h3>
+                <p>Apps intuitivos e funcionais para Android e iOS.</p>
+            </div>
+            <div class="service">
+                <h3>Consultoria em TI</h3>
+                <p>Estratégias tecnológicas para maximizar resultados.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Seu nome" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</main>
+<footer>
+    &copy; 2025 PlugTech. Todos os direitos reservados.
+</footer>
+</body>
+</html>
