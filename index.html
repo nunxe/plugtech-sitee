@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PlugTech Store - Eletrônicos</title>
+<style>
+    /* Reset básico */
+    * {
+        margin: 0; padding: 0; box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+        background: #121212;
+        color: #EEE;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    header {
+        background: #0D47A1;
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #64FFDA;
+        font-weight: 700;
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        border-bottom: 3px solid #64FFDA;
+    }
+    nav a {
+        color: #AEEEEE;
+        text-decoration: none;
+        margin-left: 25px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    nav a:hover {
+        color: #64FFDA;
+    }
+    .banner {
+        background: url('https://images.unsplash.com/photo-1510552776732-01d7fca5f1e3?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #64FFDA;
+        text-shadow: 0 0 10px #000;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+    main {
+        max-width: 1100px;
+        margin: 0 auto 40px auto;
+        padding: 0 20px;
+        flex-grow: 1;
+    }
+    section {
+        margin-bottom: 40px;
+    }
+    section h2 {
+        color: #64FFDA;
+        font-size: 2rem;
+        border-left: 6px solid #64FFDA;
+        padding-left: 10px;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+    .categories {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+    .category {
+        background: #0D47A1;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-weight: 600;
+        color: #AEEEEE;
+        user-select: none;
+    }
+    .category:hover {
+        background: #64FFDA;
+        color: #0D47A1;
+    }
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+        gap: 25px;
+    }
+    .product {
+        background: #1E1E1E;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #64FFDA55;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 20px #64FFDAAA;
+    }
+    .product img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: #0D47A1;
+    }
+    .product-details {
+        padding: 15px 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .product-title {
+        font-weight: 700;
+        color: #64FFDA;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        min-height: 48px;
+    }
+    .product-price {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #AEEEEE;
+        margin-bottom: 15px;
+    }
+    .buy-btn {
+        background: #64FFDA;
+        color: #0D47A1;
+        border: none;
+        padding: 12px;
+        font-weight: 700;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .buy-btn:hover {
+        background: #52c7b8;
+        color: #0B3E3E;
+    }
+    footer {
+        background: #0D47A1;
+        color: #AEEEEE;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        border-top: 3px solid #64FFDA;
+    }
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .banner {
+            font-size: 1.8rem;
+            height: 250px;
+        }
+        .products-grid {
+            grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+            gap: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    PlugTech Store
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#categories">Categorias</a>
+        <a href="#products">Produtos</a>
+        <a href="#contact">Contato</a>
+    </nav>
+</header>
+<div class="banner" id="home">
+    Promoção: Smartphones com até 30% OFF!
+</div>
+<main>
+    <section id="categories">
+        <h2>Categorias</h2>
+        <div class="categories">
+            <div class="category">Smartphones</div>
+            <div class="category">Acessórios</div>
+            <div class="category">Computadores</div>
+            <div class="category">Wearables</div>
+        </div>
+    </section>
+    <section id="products">
+        <h2>Produtos</h2>
+        <div class="products-grid">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Smartphone" />
+                <div class="product-details">
+                    <div class="product-title">Smartphone XYZ</div>
+                    <div class="product-price">R$ 1.999,00</div>
+                    <a href="#" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Fone Bluetooth" />
+                <div class="product-details">
+                    <div class="product-title">Fone Bluetooth ABC</div>
+                    <div class="product-price">R$ 299,00</div>
+                    <a href="#" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Laptop" />
+                <div class="product-details">
+                    <div class="product-title">Laptop Gamer Ultra</div>
+                    <div class="product-price">R$ 5.499,00</div>
+                    <a href="#" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80" alt="Smartwatch" />
+                <div class="product-details">
+                    <div class="product-title">Smartwatch Pro 2025</div>
+                    <div class="product-price">R$ 899,00</div>
+                    <a href="#" class="buy-btn">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Seu nome" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</main>
+<footer>
+    &copy; 2025 PlugTech Store. Todos os direitos reservados.
+</footer>
+</body>
+</html>
