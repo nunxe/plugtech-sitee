@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>PlugTech Store - Eletrônicos</title>
 <style>
-    /* Reset básico */
     * {
         margin: 0; padding: 0; box-sizing: border-box;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -93,6 +91,10 @@
         background: #64FFDA;
         color: #0D47A1;
     }
+    .category.active {
+        background: #64FFDA;
+        color: #0D47A1;
+    }
     .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
@@ -137,6 +139,12 @@
         color: #AEEEEE;
         margin-bottom: 15px;
     }
+    .product-cost {
+        font-size: 0.85rem;
+        font-style: italic;
+        color: #999;
+        margin-bottom: 10px;
+    }
     .buy-btn {
         background: #64FFDA;
         color: #0D47A1;
@@ -158,109 +166,355 @@
         background: #0D47A1;
         color: #AEEEEE;
         text-align: center;
+
         padding: 20px;
+
         font-size: 0.9rem;
+
         border-top: 3px solid #64FFDA;
+
     }
+
     @media (max-width: 600px) {
+
         header {
+
             flex-direction: column;
+
             font-size: 1.4rem;
+
             text-align: center;
+
         }
+
         nav {
+
             margin-top: 10px;
+
         }
+
         nav a {
+
             margin-left: 15px;
+
             margin-right: 15px;
+
         }
+
         .banner {
+
             font-size: 1.8rem;
+
             height: 250px;
+
         }
+
         .products-grid {
+
             grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+
             gap: 15px;
+
         }
+
     }
+
 </style>
+
+<script>
+
+// Filtrar produtos por categoria
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const categories = document.querySelectorAll('.category');
+
+    const products = document.querySelectorAll('.product');
+
+    categories.forEach(cat => {
+
+        cat.addEventListener('click', () => {
+
+            const catName = cat.textContent.toLowerCase();
+
+            if(cat.classList.contains('active')) {
+
+                cat.classList.remove('active');
+
+                products.forEach(p => p.style.display = 'flex');
+
+            } else {
+
+                categories.forEach(c => c.classList.remove('active'));
+
+                cat.classList.add('active');
+
+                products.forEach(p => {
+
+                    if(p.dataset.category === catName) {
+
+                        p.style.display = 'flex';
+
+                    } else {
+
+                        p.style.display = 'none';
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
 </head>
+
 <body>
+
 <header>
+
     PlugTech Store
+
     <nav>
+
         <a href="#home">Home</a>
+
         <a href="#categories">Categorias</a>
+
         <a href="#products">Produtos</a>
+
         <a href="#contact">Contato</a>
+
     </nav>
+
 </header>
+
 <div class="banner" id="home">
-    Promoção: Smartphones com até 30% OFF!
+
+    Promoção: Produtos Penning e Relógios Revenger com estoque grande!
+
 </div>
+
 <main>
+
     <section id="categories">
+
         <h2>Categorias</h2>
+
         <div class="categories">
-            <div class="category">Smartphones</div>
-            <div class="category">Acessórios</div>
-            <div class="category">Computadores</div>
-            <div class="category">Wearables</div>
+
+            <div class="category">Carregadores</div>
+
+            <div class="category">Fones</div>
+
+            <div class="category">Adaptadores</div>
+
+            <div class="category">Relógios</div>
+
         </div>
+
     </section>
+
     <section id="products">
+
         <h2>Produtos</h2>
+
         <div class="products-grid">
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Smartphone" />
+
+            <!-- Carregadores -->
+
+            <div class="product" data-category="carregadores">
+
+                <img src="https://images.unsplash.com/photo-1582582494704-0f979122eae2?auto=format&fit=crop&w=400&q=80" alt="Carregador Penning" />
+
                 <div class="product-details">
-                    <div class="product-title">Smartphone XYZ</div>
-                    <div class="product-price">R$ 1.999,00</div>
+
+                    <div class="product-title">Carregador Penning Turbo</div>
+
+                    <div class="product-cost">Custo: R$ 5,50</div>
+
+                    <div class="product-price">R$ 8,25</div>
+
                     <a href="#" class="buy-btn">Comprar</a>
+
                 </div>
+
             </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Fone Bluetooth" />
+
+            <div class="product" data-category="carregadores">
+
+                <img src="https://images.unsplash.com/photo-1581349487586-c5a8c9db87e3?auto=format&fit=crop&w=400&q=80" alt="Carregador Rápido" />
+
                 <div class="product-details">
-                    <div class="product-title">Fone Bluetooth ABC</div>
-                    <div class="product-price">R$ 299,00</div>
+
+                    <div class="product-title">Carregador Rápido Penning</div>
+
+                    <div class="product-cost">Custo: R$ 5,50</div>
+
+                    <div class="product-price">R$ 8,25</div>
+
                     <a href="#" class="buy-btn">Comprar</a>
+
                 </div>
+
             </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Laptop" />
+
+            <!-- Fones -->
+
+            <div class="product" data-category="fones">
+
+                <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" alt="Fone de Ouvido Penning" />
+
                 <div class="product-details">
-                    <div class="product-title">Laptop Gamer Ultra</div>
-                    <div class="product-price">R$ 5.499,00</div>
+
+                    <div class="product-title">Fone Bluetooth Penning</div>
+
+                    <div class="product-cost">Custo: R$ 22,00</div>
+
+                    <div class="product-price">R$ 33,00</div>
+
                     <a href="#" class="buy-btn">Comprar</a>
+
                 </div>
+
             </div>
-            <div class="product">
-                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=400&q=80" alt="Smartwatch" />
+
+            <div class="product" data-category="fones">
+
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Fone com fio Penning" />
+
                 <div class="product-details">
-                    <div class="product-title">Smartwatch Pro 2025</div>
-                    <div class="product-price">R$ 899,00</div>
+
+                    <div class="product-title">Fone com Fio Penning</div>
+
+                    <div class="product-cost">Custo: R$ 22,00</div>
+
+                    <div class="product-price">R$ 33,00</div>
+
                     <a href="#" class="buy-btn">Comprar</a>
+
                 </div>
+
             </div>
+
+            <!-- Adaptadores -->
+
+            <div class="product" data-category="adaptadores">
+
+                <img src="https://images.unsplash.com/photo-1590080877777-f3e5aa0d7ad7?auto=format&fit=crop&w=400&q=80" alt="Adaptador USB Penning" />
+
+                <div class="product-details">
+
+                    <div class="product-title">Adaptador USB-C Penning</div>
+
+                    <div class="product-cost">Custo: R$ 5,50</div>
+
+                    <div class="product-price">R$ 8,25</div>
+
+                    <a href="#" class="buy-btn">Comprar</a>
+
+                </div>
+
+            </div>
+
+            <div class="product" data-category="adaptadores">
+
+                <img src="https://images.unsplash.com/photo-1504087697492-d16d4e883b0a?auto=format&fit=crop&w=400&q=80" alt="Adaptador Múltiplo Penning" />
+
+                <div class="product-details">
+
+                    <div class="product-title">Adaptador Múltiplo Penning</div>
+
+                    <div class="product-cost">Custo: R$ 5,50</div>
+
+                    <div class="product-price">R$ 8,25</div>
+
+                    <a href="#" class="buy-btn">Comprar</a>
+
+                </div>
+
+            </div>
+
+            <!-- Relógios -->
+
+            <div class="product" data-category="relógios">
+
+                <img src="https://cdn.shopify.com/s/files/1/0366/8821/products/MasculinoRevenger_feminino_800x.jpg?v=1669120316" alt="Relógio Digital Revenger Masculino" />
+
+                <div class="product-details">
+
+                    <div class="product-title">Relógio Digital Revenger Masculino</div>
+
+                    <div class="product-cost">Custo: R$ 180,00</div>
+
+                    <div class="product-price">R$ 270,00</div>
+
+                    <a href="#" class="buy-btn">Comprar</a>
+
+                </div>
+
+            </div>
+
+            <div class="product" data-category="relógios">
+
+                <img src="https://cdn.shopify.com/s/files/1/0366/8821/products/FemininoRevengerMasculino_800x.jpg?v=1669120317" alt="Relógio Digital Revenger Feminino" />
+
+                <div class="product-details">
+
+                    <div class="product-title">Relógio Digital Revenger Feminino</div>
+
+                    <div class="product-cost">Custo: R$ 180,00</div>
+
+                    <div class="product-price">R$ 270,00</div>
+
+                    <a href="#" class="buy-btn">Comprar</a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </section>
+
     <section id="contact">
+
         <h2>Contato</h2>
+
         <form action="#" method="post">
+
             <label for="name">Nome</label>
+
             <input type="text" id="name" name="name" placeholder="Seu nome" required />
+
             <label for="email">Email</label>
+
             <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+
             <label for="message">Mensagem</label>
+
             <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+
             <button type="submit">Enviar</button>
+
         </form>
+
     </section>
+
 </main>
+
 <footer>
+
     &copy; 2025 PlugTech Store. Todos os direitos reservados.
+
 </footer>
+
 </body>
+
 </html>
