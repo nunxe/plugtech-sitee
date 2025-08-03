@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlugTech - Loja de Eletrônicos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>PlugTech</h1>
+    <nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#carrinho">Carrinho</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="produtos" class="produtos">
+    <h2>Produtos em destaque</h2>
+    <div class="lista-produtos">
+      <!-- Produtos serão inseridos aqui com JavaScript -->
+    </div>
+  </section>
+
+  <section id="carrinho" class="carrinho">
+    <h2>Seu carrinho</h2>
+    <div id="itens-carrinho"></div>
+    <p id="total">Total: R$ 0,00</p>
+    <button onclick="finalizarCompra()">Finalizar Compra</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PlugTech. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
